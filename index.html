@@ -34,10 +34,38 @@
 	</ul>
 
 	<script>
-	 window.addEventListener('beforeunload', (event) => {
+		const btn = document.querySelector('button');
+		const input = document.querySelector('#item');
+		const list = document.querySelector('ul');
+		
+
+		function addItem(){
+			console.log(val);
+			input.value = '';
+
+			const listEl = document.createElement('li');
+			const listElSpan = document.createElement('span');
+			const listBtn = document.createElement('button');
+			let val = input.value;
+			
+			
+			listEl.appendChild(listElSpan);
+			listEl.appendChild(listBtn);
+			listElSpan.textContent = val;
+			listBtn.textContent = 'Delete';
+			list.appendChild(listEl);
+			input.focus();
+			listBtn.addEventListener('click', () => {
+				listEl.remove();
+			})
+		}
+		btn.addEventListener('click', addItem);
+
+		window.addEventListener('beforeunload', (event) => {
 		event.preventDefault();
 		// Google Chrome requires returnValue to be set.
 		event.returnValue = '';
+
 	});
 	</script>
 </body>
