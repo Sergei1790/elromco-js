@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../elromco2/javascript-exercises"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "elromco-js",
+		"liveServer.settings.port": 5501
+	}
+}

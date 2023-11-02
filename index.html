@@ -1,40 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document !!</title>
-    <link rel="stylesheet" href="css/style.css">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document !!</title>
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+		li {
+			margin-bottom: 10px;
+		}
+
+		li button {
+			font-size: 8px;
+			margin-left: 20px;
+			color: #666;
+		}
+	</style>
 </head>
+
 <body>
-<!--  
-  <ol id="elem">
-    <li>Привет</li>
-    <li>Мир</li>
-    <li>Привет</li>
-    <li>Мир</li>
-    <li>Привет</li>
-    <li>Мир</li>
-    <li>Привет</li>
-    <li>Мир</li>
-  </ol>
-  
-  <script>
-    function clear(elem) { 
-      elem.innerHTML = '';
-    }
-  
-    clear(elem); // очищает список
-  </script>
-     -->
-    <script src="js/script.js"></script>
-    elromco starting branch
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <h1>elromco</h1>
-        </div>asdasdasdasd
-      </div>
+	<h1>My shopping list</h1>
+
+	<div>
+		<label for="item">Enter a new item:</label>
+		<input type="text" name="item" id="item">
+		<button>Add item</button>
+	</div>
+
+	<ul>
+
+	</ul>
+
+	<script>
+	 window.addEventListener('beforeunload', (event) => {
+		event.preventDefault();
+		// Google Chrome requires returnValue to be set.
+		event.returnValue = '';
+	});
+	</script>
 </body>
+
 </html>

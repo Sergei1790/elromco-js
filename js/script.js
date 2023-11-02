@@ -1,33 +1,33 @@
-'use strict'
+// 'use strict'
 // var и let
-age = 31;
+// age = 31;
 // console.log(age);
 
-var age;
+// var age;
 
 // let нельзя исп до обьявления
 
-function testLet(){
-    let myAgeLet = 31;
-}
-testLet();
+// function testLet(){
+//     let myAgeLet = 31;
+// }
+// testLet();
 // console.log(myAgeLet); // Не видна за пределами функции
 
-function testVar(){
-    var myAgeVar = 31;
-}
-testVar();
+// function testVar(){
+//     var myAgeVar = 31;
+// }
+// testVar();
 // console.log(myAgeVar); // Не видна за пределами функции
 
 // НО
-if(true){
-    let sizeLet = 31;
-}
+// if(true){
+//     let sizeLet = 31;
+// }
 // console.log(sizeLet); // Не видна за пределами блока
 
-if(true){
-    var sizeVar = 31;
-}
+// if(true){
+//     var sizeVar = 31;
+// }
 // console.log(sizeVar); // Видна за пределами блока
 
 
@@ -124,14 +124,15 @@ if(true){
 // console.log(list([ {name: 'Bart'}, {name: 'Lisa'}, {name: 'Maggie'}, {name: 'Homer'}, {name: 'Marge'} ]))
 
 
-console.log('Bart, Lisa, Maggie, Homer, Marge'.replace(/(.*),(.*)$/, "$1 &$2"));
+// console.log('Bart, Lisa, Maggie, Homer, Marge'.replace(/(.*),(.*)$/, "$1 &$2"));
 
 // let number = prompt('input number');
 // number > 0 ? alert('1') : alert('Не знаете? “ECMAScript”!')
 
 
-let login = prompt('login')
-let message = (login == 'Сотрудник') ? 'Привет' :
-(login == 'Директор') ? 'Здравствуйте' : 'Нет логина'
+// let login = prompt('login')
+// let message = (login == 'Сотрудник') ? 'Привет' :
+// (login == 'Директор') ? 'Здравствуйте' : 'Нет логина'
 
-alert(message)
+// alert(message)
+
