@@ -23,7 +23,7 @@
 <body>
 	<h1>My shopping list</h1>
 
-	<div>
+	<div class="sss">
 		<label for="item">Enter a new item:</label>
 		<input type="text" name="item" id="item">
 		<button>Add item</button>
@@ -34,39 +34,14 @@
 	</ul>
 
 	<script>
-		const btn = document.querySelector('button');
-		const input = document.querySelector('#item');
-		const list = document.querySelector('ul');
-		
+		document.querySelector('.sss').addEventListener('mouseenter', () =>{
+			console.log('mouseenter')
+		} );
+		document.querySelector('.sss').addEventListener('mouseover', () =>{
+			 console.log('mouseover')
+			});
 
-		function addItem(){
-			console.log(val);
-			input.value = '';
-
-			const listEl = document.createElement('li');
-			const listElSpan = document.createElement('span');
-			const listBtn = document.createElement('button');
-			let val = input.value;
-			
-			
-			listEl.appendChild(listElSpan);
-			listEl.appendChild(listBtn);
-			listElSpan.textContent = val;
-			listBtn.textContent = 'Delete';
-			list.appendChild(listEl);
-			input.focus();
-			listBtn.addEventListener('click', () => {
-				listEl.remove();
-			})
-		}
-		btn.addEventListener('click', addItem);
-
-		window.addEventListener('beforeunload', (event) => {
-		event.preventDefault();
-		// Google Chrome requires returnValue to be set.
-		event.returnValue = '';
-
-	});
+	
 	</script>
 </body>
 
