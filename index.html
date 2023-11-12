@@ -16,14 +16,20 @@
 
 	
 	<script>
-		const power = function(a, b) {
-			let res = 1;
-			for(let i = 1; i<=b; i++){
-				res *=a;
+		const palindromes = function (string) {
+			let newStr = string.trim().toLowerCase().replace(/[^\w]/g, '');
+			let reverseStr = newStr.split('').reverse().join('');
+			if(newStr === reverseStr){
+				return true;
+			} else{
+				return false;
 			}
-			return res;
+			// (newStr === reverseStr) ? true : false;
+
+			// console.log(reverseStr);
+			// return reverseStr;
 		};
-		console.log(power(2, 4));
+		console.log(palindromes('A car, a man, a maraca.'));
 	  </script>
 </body>
 
