@@ -16,20 +16,40 @@
 
 	
 	<script>
-		const palindromes = function (string) {
-			let newStr = string.trim().toLowerCase().replace(/[^\w]/g, '');
-			let reverseStr = newStr.split('').reverse().join('');
-			if(newStr === reverseStr){
-				return true;
-			} else{
-				return false;
-			}
-			// (newStr === reverseStr) ? true : false;
+		 const people = [
+		 	{
+				name: "Carly",
+				yearOfBirth: 2018,
+			},
+			{
+				name: "Ray",
+				yearOfBirth: 1962,
+				yearOfDeath: 1963,
+			},
 
-			// console.log(reverseStr);
-			// return reverseStr;
+			{
+				name: "Jane",
+				yearOfBirth: 1912,
+				yearOfDeath: 1941,
+			},
+		]
+
+		const findTheOldest = function(arr) {
+			return arr.reduce(function(oldest, person){
+				if(person.yearOfDeath == undefined){
+					person.yearOfDeath = (new Date()).getFullYear();
+				} 
+				if(oldest.yearOfDeath == undefined){
+					oldest.yearOfDeath = (new Date()).getFullYear();
+				} 
+				const oldestAge = oldest.yearOfDeath - oldest.yearOfBirth;
+				const currentAge = person.yearOfDeath - person.yearOfBirth;
+				return (oldestAge < currentAge) ? person : oldest;
+			})
 		};
-		console.log(palindromes('A car, a man, a maraca.'));
+
+		console.log(findTheOldest(people).name);
+	
 	  </script>
 </body>
 

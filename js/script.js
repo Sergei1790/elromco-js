@@ -312,13 +312,61 @@
 		// Find the comment with this ID
 		// delete the comment with the ID of 823423
 
-		const index = comments.findIndex(comment => comment.id === 823423);
-		// console.log(index);
-		// comments.splice(index, 1);
+		// const index = comments.findIndex(comment => comment.id === 823423);
+		// // console.log(index);
+		// // comments.splice(index, 1);
 
-		const newComments = [
-			...comments.slice(0, index),
-			...comments.slice(index + 1),
-		];
+		// const newComments = [
+		// 	...comments.slice(0, index),
+		// 	...comments.slice(index + 1),
+		// ];
 
-		console.table(newComments);
+		// console.table(newComments);
+
+    const people = [
+      {
+       name: "Carly",
+       yearOfBirth: 2018,
+     },
+     {
+       name: "Ray",
+       yearOfBirth: 1962,
+       yearOfDeath: 1963,
+     },
+
+     {
+       name: "Jane",
+       yearOfBirth: 1912,
+       yearOfDeath: 1941,
+     },
+   ]
+
+   const findTheOldest = function(arr) {
+     return arr.reduce(function(oldest, person){
+       if(person.yearOfDeath == undefined){
+         person.yearOfDeath = (new Date()).getFullYear();
+       } 
+       if(oldest.yearOfDeath == undefined){
+         oldest.yearOfDeath = (new Date()).getFullYear();
+       } 
+       console.log(person.yearOfDeath);
+       const oldestAge = oldest.yearOfDeath - oldest.yearOfBirth;
+       const currentAge = person.yearOfDeath - person.yearOfBirth;
+       
+       
+       return (oldestAge < currentAge) ? person : oldest;
+     })
+   };
+  //   const findTheOldest = function(arr) {
+  //     const newArr = arr.reduce(function(oldest, person){
+  //         let currentAge = 0;
+  //         if(person.yearOfDeath == undefined){
+  //             currentAge = (new Date()).getFullYear() - person.yearOfBirth;
+  //         } else{
+  //             currentAge = person.yearOfDeath - person.yearOfBirth;
+  //         }
+          
+  //         return (oldest.age < currentAge) ? { name: person.name, age: currentAge } : oldest;
+  //     }, { name: "", age: 0 })
+  //     return newArr;
+  // };
