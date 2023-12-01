@@ -13,48 +13,13 @@
 </head>
 
 <body>
-	<div class="grid-container">
-		<div class="grid-item">
-		  <p>Odin 1</p>
-		  <img src="https://i.imgur.com/jkwFqfX.png" alt="top logo" />
-		</div>
-		<div class="grid-item">
-		  <p>Odin 2</p>
-		  <img src="https://i.imgur.com/jkwFqfX.png" alt="top logo" />
-		</div>
-		<div class="grid-item">
-		  <p>Odin 3</p>
-		  <img src="https://i.imgur.com/jkwFqfX.png" alt="top logo" />
-		</div>
-		<div class="grid-item">
-		  <p>Odin 4</p>
-		  <img src="https://i.imgur.com/jkwFqfX.png" alt="top logo" />
-		</div>
-		<div class="grid-item">
-		  <p>Odin 5</p>
-		  <img src="https://i.imgur.com/jkwFqfX.png" alt="top logo" />
-		</div>
-		<div class="grid-item">
-		  <p>Odin 6</p>
-		  <img src="https://i.imgur.com/jkwFqfX.png" alt="top logo" />
-		</div>
-		<div class="grid-item">
-		  <p>Odin 7</p>
-		  <img src="https://i.imgur.com/jkwFqfX.png" alt="top logo" />
-		</div>
-		<div class="grid-item">
-		  <p>Odin 8</p>
-		  <img src="https://i.imgur.com/jkwFqfX.png" alt="top logo" />
-		</div>
-		<div class="grid-item">
-		  <p>Odin 9</p>
-		  <img src="https://i.imgur.com/jkwFqfX.png" alt="top logo" />
-		</div>
-		<div class="grid-item">
-		  <p>Odin 10</p>
-		  <img src="https://i.imgur.com/jkwFqfX.png" alt="top logo" />
-		</div>
-	  </div>
+	<p>Some paragraph text</p>
+    <h1>some heading 1 text</h1>
+    <h2>some heading 2 text</h2>
+
+    <button id="size-12">12</button>
+    <button id="size-14">14</button>
+    <button id="size-16">16</button>
 	
 	<script>
 		//  const people = [
@@ -90,7 +55,24 @@
 		// };
 
 		// console.log(findTheOldest(people).name);
+
+
 	
+
+		function makeSizer(size) {
+			// return function() {
+				document.body.style.fontSize = size + 'px';
+			// };
+		}
+
+var size12 = makeSizer(12);
+var size14 = makeSizer(14);
+var size16 = makeSizer(16);
+
+document.getElementById('size-12').onclick = size12;
+document.getElementById('size-14').onclick = size14;
+document.getElementById('size-16').onclick = size16;
+
 	  </script>
 </body>
 
