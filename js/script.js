@@ -249,20 +249,20 @@
 
 
 	// console.log( unique(strings) ); // кришна, харе, :-O
-  const people = [
-    { name: 'Wes', year: 1988 },
-    { name: 'Kait', year: 1986 },
-    { name: 'Irv', year: 1970 },
-    { name: 'Lux', year: 2015 }
-  ];
+  // const people = [
+  //   { name: 'Wes', year: 1988 },
+  //   { name: 'Kait', year: 1986 },
+  //   { name: 'Irv', year: 1970 },
+  //   { name: 'Lux', year: 2015 }
+  // ];
 
-  const comments = [
-    { text: 'Love this!', id: 523423 },
-    { text: 'Super good', id: 823423 },
-    { text: 'You are the best', id: 2039842 },
-    { text: 'Ramen is my fav food ever', id: 123523 },
-    { text: 'Nice Nice Nice!', id: 542328 }
-  ];
+  // const comments = [
+  //   { text: 'Love this!', id: 523423 },
+  //   { text: 'Super good', id: 823423 },
+  //   { text: 'You are the best', id: 2039842 },
+  //   { text: 'Ramen is my fav food ever', id: 123523 },
+  //   { text: 'Nice Nice Nice!', id: 542328 }
+  // ];
 
   	// Some and Every Checks
 		// Array.prototype.some() // is at least one person 19 or older?
@@ -323,40 +323,40 @@
 
 		// console.table(newComments);
 
-    const people = [
-      {
-       name: "Carly",
-       yearOfBirth: 2018,
-     },
-     {
-       name: "Ray",
-       yearOfBirth: 1962,
-       yearOfDeath: 1963,
-     },
+  //   const people = [
+  //     {
+  //      name: "Carly",
+  //      yearOfBirth: 2018,
+  //    },
+  //    {
+  //      name: "Ray",
+  //      yearOfBirth: 1962,
+  //      yearOfDeath: 1963,
+  //    },
 
-     {
-       name: "Jane",
-       yearOfBirth: 1912,
-       yearOfDeath: 1941,
-     },
-   ]
+  //    {
+  //      name: "Jane",
+  //      yearOfBirth: 1912,
+  //      yearOfDeath: 1941,
+  //    },
+  //  ]
 
-   const findTheOldest = function(arr) {
-     return arr.reduce(function(oldest, person){
-       if(person.yearOfDeath == undefined){
-         person.yearOfDeath = (new Date()).getFullYear();
-       } 
-       if(oldest.yearOfDeath == undefined){
-         oldest.yearOfDeath = (new Date()).getFullYear();
-       } 
-       console.log(person.yearOfDeath);
-       const oldestAge = oldest.yearOfDeath - oldest.yearOfBirth;
-       const currentAge = person.yearOfDeath - person.yearOfBirth;
+  //  const findTheOldest = function(arr) {
+  //    return arr.reduce(function(oldest, person){
+  //      if(person.yearOfDeath == undefined){
+  //        person.yearOfDeath = (new Date()).getFullYear();
+  //      } 
+  //      if(oldest.yearOfDeath == undefined){
+  //        oldest.yearOfDeath = (new Date()).getFullYear();
+  //      } 
+  //      console.log(person.yearOfDeath);
+  //      const oldestAge = oldest.yearOfDeath - oldest.yearOfBirth;
+  //      const currentAge = person.yearOfDeath - person.yearOfBirth;
        
        
-       return (oldestAge < currentAge) ? person : oldest;
-     })
-   };
+  //      return (oldestAge < currentAge) ? person : oldest;
+  //    })
+  //  };
   //   const findTheOldest = function(arr) {
   //     const newArr = arr.reduce(function(oldest, person){
   //         let currentAge = 0;
@@ -370,3 +370,56 @@
   //     }, { name: "", age: 0 })
   //     return newArr;
   // };
+  let guess;
+  let number = Math.floor(Math.random() * 100) + 1;
+  do{
+    guess = prompt('Guess the num');
+    if(guess == null){
+      break;
+    }
+    guess = +guess;
+    if (guess !== number) {
+      alert('You lost!');
+    }
+  } while(guess !== number);
+  if (guess === number) {
+    alert('You won!');
+}
+function generatePassword(passwordLenghth, includeLowercase, includeUppercase, includeNumbers, includeSymbols){
+
+  const lowercaseChars = 'abcdefghijklmnopqrstuvwxyz';
+  const uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  const numberChars = '0123456789';
+  const symbolChars = '!@#$%^&*()_+=';
+
+  let allowedChars = '';
+  let password = '';
+
+  allowedChars += includeLowercase ? lowercaseChars : '';
+  allowedChars += includeUppercase ? uppercaseChars : '';
+  allowedChars += includeNumbers ? numberChars : '';
+  allowedChars += includeSymbols ? symbolChars : '';
+
+  console.log(password);
+
+  if(passwordLenghth <= 0){
+      return '(password lenghth must be at least 1)';
+  } 
+  if(allowedChars.length === 0){
+      return '(At least 1 set of characters need to be selected)';
+  } 
+  for(let i = 0; i < passwordLenghth; i++){
+      const randomIndex = Math.floor(Math.random() * allowedChars.length);
+      password += allowedChars[randomIndex];
+  }
+  return password;
+}
+const passwordLenghth = 12;
+const includeLowercase = false;
+const includeUppercase = false;
+const includeNumbers = true;
+const includeSymbols = true;
+
+const password = generatePassword(passwordLenghth, includeLowercase, includeUppercase, includeNumbers, includeSymbols)
+console.log(`Generated password: ${password}`);
+
