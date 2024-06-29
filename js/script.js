@@ -370,56 +370,21 @@
   //     }, { name: "", age: 0 })
   //     return newArr;
   // };
-  let guess;
-  let number = Math.floor(Math.random() * 100) + 1;
-  do{
-    guess = prompt('Guess the num');
-    if(guess == null){
-      break;
-    }
-    guess = +guess;
-    if (guess !== number) {
-      alert('You lost!');
-    }
-  } while(guess !== number);
-  if (guess === number) {
-    alert('You won!');
-}
-function generatePassword(passwordLenghth, includeLowercase, includeUppercase, includeNumbers, includeSymbols){
+//   let guess;
+//   let number = Math.floor(Math.random() * 3) + 1;
+//   do{
+//     guess = prompt('Guess the num');
+//     if(guess == null){
+//       break;
+//     }
+//     guess = +guess;
+//     if (guess !== number) {
+//       alert('You lost!');
+//     }
+//   } while(guess !== number);
+//   if (guess === number) {
+//     alert('You won!');
+// }
 
-  const lowercaseChars = 'abcdefghijklmnopqrstuvwxyz';
-  const uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-  const numberChars = '0123456789';
-  const symbolChars = '!@#$%^&*()_+=';
-
-  let allowedChars = '';
-  let password = '';
-
-  allowedChars += includeLowercase ? lowercaseChars : '';
-  allowedChars += includeUppercase ? uppercaseChars : '';
-  allowedChars += includeNumbers ? numberChars : '';
-  allowedChars += includeSymbols ? symbolChars : '';
-
-  console.log(password);
-
-  if(passwordLenghth <= 0){
-      return '(password lenghth must be at least 1)';
-  } 
-  if(allowedChars.length === 0){
-      return '(At least 1 set of characters need to be selected)';
-  } 
-  for(let i = 0; i < passwordLenghth; i++){
-      const randomIndex = Math.floor(Math.random() * allowedChars.length);
-      password += allowedChars[randomIndex];
-  }
-  return password;
-}
-const passwordLenghth = 12;
-const includeLowercase = false;
-const includeUppercase = false;
-const includeNumbers = true;
-const includeSymbols = true;
-
-const password = generatePassword(passwordLenghth, includeLowercase, includeUppercase, includeNumbers, includeSymbols)
-console.log(`Generated password: ${password}`);
-
+import {PI, getCircumference} from './modules.js';
+console.log(getCircumference(2));
