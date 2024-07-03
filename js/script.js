@@ -388,3 +388,64 @@
 
 import {PI, getCircumference} from './modules.js';
 console.log(getCircumference(2));
+
+function walkDog(){
+	return new Promise((resolve, reject) =>{
+		setTimeout( () => {
+			const done = true;
+			if(done){
+				resolve('You walk the dog 🐕');
+			} else{
+				reject('you failed')
+			}
+		}, 1500);
+	});
+}
+function cleanKitchen(){
+	return new Promise((resolve, reject) =>{
+		setTimeout( () => {
+			const done = false;
+			if(done){
+				resolve('You cleaned kitchen 🧹');
+			} else{
+				reject('you failed')
+			}
+		}, 2500);
+	});
+}
+function takeOutTrash(){
+	return new Promise((resolve, reject) =>{
+		setTimeout( () => {
+			const done = true;
+			if(done){
+				resolve('You took out trash 🔁');
+			} else{
+				reject('you failed')
+			}
+		}, 500);
+	});
+}
+
+async function doChores(){
+	try{
+		const walkDogResult = await walkDog();
+		console.log(walkDogResult);
+		
+		const cleanKitchenResult = await cleanKitchen();
+		console.log(cleanKitchenResult);
+	
+		const takeOutTrashResult = await takeOutTrash();
+		console.log(takeOutTrashResult);console.log('All done');
+	} 
+	catch(error){
+		console.error(error);
+	}
+
+	
+}
+doChores()
+
+walkDog().then(value => {console.log(value); return cleanKitchen()})
+		.then(value => {console.log(value); return takeOutTrash()})
+		.then(value => {console.log(value); console.log('done')})
+		.catch(error => console.log(error)); 
